@@ -45,12 +45,12 @@ public class PaddleMovement : MonoBehaviour {
        // col.collider.rigidbody.AddForce(col.contacts[0].normal * 20f, ForceMode.VelocityChange);
 
 
-        Vector2 paddlePosition = this.transform.position;
+       /* Vector2 paddlePosition = this.transform.position;
         Vector2 ballPosition = col.collider.rigidbody.transform.position;
         Vector2 delta = ballPosition - paddlePosition;
         Vector2 direction = delta.normalized;
         col.collider.rigidbody.velocity = direction * 500f;
-
+        */
         float force = 350;
         if(hits < 4)
         {
