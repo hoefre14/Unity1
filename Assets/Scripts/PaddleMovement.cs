@@ -21,17 +21,13 @@ public class PaddleMovement : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-/*
-        Vector3 PO = col.other.transform.position;
-        Vector3 NO = new Vector3(0, 1, 0);
-        Vector3 NO_PO_Scaled = Vector3.Scale(NO, PO);
-        NO_PO_Scaled = Vector3.Scale(NO_PO_Scaled, new Vector3(2, 2, 2));
-        NO_PO_Scaled = Vector3.Scale(NO_PO_Scaled, NO);
-        Vector3 OQ = PO - NO_PO_Scaled;
-        
-        col.other.rigidbody.AddForceAtPosition(new Vector3(650f, 0, 0), OQ);     
- * 
- * */
+        Vector3 PO = col.other.rigidbody.velocity;
+        Vector3 NO = col.rigidbody.velocity;
+        float dot = Vector3.Dot(NO, PO);
+
+        Vector3 OQ = PO - (2 * dot * NO);
+       // col.collider.rigidbody.velocity = OQ;     
+
         /*
         Debug.Log("Bricks total: " + GM.instance.Bricks);
         Debug.Log("last checked bricks: " + GM.instance.LastNumberOfBricksRemaining);
@@ -45,17 +41,15 @@ public class PaddleMovement : MonoBehaviour {
         GM.instance.BricksHitInARow = 0;
         GM.instance.PaddleHitCount++;
         int hits = GM.instance.PaddleHitCount;
+        
+       // col.collider.rigidbody.AddForce(col.contacts[0].normal * 20f, ForceMode.VelocityChange);
 
-        /*
-        Vector3 PO = col.other.transform.position;
-        Vector3 NO = new Vector3(0, 1, 0);
-        Vector3 NO_PO_Scaled = Vector3.Scale(NO, PO);
-        NO_PO_Scaled = Vector3.Scale(NO_PO_Scaled, new Vector3(2, 2, 2));
-        NO_PO_Scaled = Vector3.Scale(NO_PO_Scaled, NO);
-        Vector3 OQ = PO - NO_PO_Scaled;
 
-        col.collider.rigidbody.AddForce(OQ);
-         * */
+        Vector2 paddlePosition = this.transform.position;
+        Vector2 ballPosition = col.collider.rigidbody.transform.position;
+        Vector2 delta = ballPosition - paddlePosition;
+        Vector2 direction = delta.normalized;
+        col.collider.rigidbody.velocity = direction * 500f;
 
         float force = 350;
         if(hits < 4)
@@ -71,15 +65,15 @@ public class PaddleMovement : MonoBehaviour {
             force = 450;
         }
         
-        
+        /*
         foreach (ContactPoint contact in col.contacts)
         {
             if (contact.thisCollider == collider)
             {
                 float z = contact.point.x - transform.position.x;
-                contact.otherCollider.rigidbody.AddForce(z + 100f, z + 100f, 0);
+                contact.otherCollider.rigidbody.velocity = new Vector3(z * 500f, z * 500f, 0);
             }
-        }
+        }*/
     }
     /*
 

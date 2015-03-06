@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42198b891892fdb4ba2b342806ba5eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballInitialVelocity: 0
+  ballInitialVelocity: 600
 --- !u!135 &13578660
 SphereCollider:
   m_ObjectHideFlags: 1
