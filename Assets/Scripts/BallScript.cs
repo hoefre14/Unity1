@@ -73,12 +73,12 @@ public class BallScript : MonoBehaviour {
     {
         ContactPoint cp = c.contacts[0];
         // calculate with addition of normal vector
-        // myRigidbody.velocity = oldVel + cp.normal*2.0f*oldVel.magnitude;
+         rb.velocity = oldVel + cp.normal*2.0f*oldVel.magnitude;
 
         // calculate with Vector3.Reflect
         rb.velocity = Vector3.Reflect(oldVel, cp.normal);
 
         // bumper effect to speed up ball
-        rb.velocity += cp.normal;
+        //rb.velocity += cp.normal * 0.5f;
     }
 }

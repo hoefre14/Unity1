@@ -67,8 +67,8 @@ public class PaddleMovement : MonoBehaviour {
         {
             if (contact.thisCollider == collider)
             {
-                //float z = contact.point.x - transform.position.x;
-               // contact.otherCollider.rigidbody.AddForce(z + 100f, z + 100f, 0);
+                float z = contact.point.x - transform.position.x;
+                contact.otherCollider.rigidbody.AddForce(z + 1f, z + 1f, 0);
             }
         }
     }
