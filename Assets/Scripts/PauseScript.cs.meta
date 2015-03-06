@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 199e6ce834d9fcb49b93d9f76c8d8f8b
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - canvas2: {fileID: 22346618, guid: 07aacadba80597748bb61c1d6c822c1d, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

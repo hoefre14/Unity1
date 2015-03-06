@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 7dbd32ae44049e64f985a5e66c1b173b
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - sound: {fileID: 103190, guid: bf9fe8757160ef84da44a88953507d6a, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
