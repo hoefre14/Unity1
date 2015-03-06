@@ -16,6 +16,23 @@ public class Menu : MonoBehaviour
             GM.instance.loadNextLevel(false);
     }
 
+    public void SelectLevel()
+    {
+        Application.LoadLevel("Scene1");
+    }
+    public void SelectLevel2()
+    {
+        Application.LoadLevel("Scene2");
+    }
+    public void HighScores()
+    {
+        Application.LoadLevel("Highscores");
+    }
+    public void ManuFromHS()
+    {
+        Application.LoadLevel("Menu2");
+    }
+
     public void QuitGame()
     {
         Application.Quit();
