@@ -36,7 +36,7 @@ public class GM : MonoBehaviour
     public GameObject backGroundMusicLev1;
     public GameObject backGroundMusicLev2;
 
-    public Canvas nameInputCanvas;
+    public GameObject nameInputCanvas;
     int secondsCounter = 0;
     private static Timer timer;
     public bool timerStarted = false;
@@ -132,40 +132,46 @@ public class GM : MonoBehaviour
         {
             timer.Stop();
             youWon.SetActive(true);
-            Debug.Log("check game ova");
+
             if(getCurrentLevel() == 1)
             {
                 scoreFromLevel1 = this.Score;
                 timeUsedInLevel1 = secondsCounter;
+
+                Time.timeScale = .25f;
+                Invoke("loadNextLevel", 1f);
+                this.BricksHitInARow = 0;
+                this.Score = 0;
             }
             else if(getCurrentLevel() == 2)
             {
-                string name = "hphphp";
-                SaveHighScore(name, this.Score + scoreFromLevel1, timeUsedInLevel1 + secondsCounter);
+                Screen.showCursor = true;
+                this.pauseTimer();
+                Time.timeScale = 0;
+                nameInputCanvas.SetActive(true);
+
             }
-            Time.timeScale = .25f;
-            Invoke("loadNextLevel", 1f);
-            this.BricksHitInARow = 0;
-            this.Score = 0;
         }
 
         if (lives < 1)
         {
             if (getCurrentLevel() == 1)
             {
-                SaveHighScore(name, this.Score,secondsCounter);
+                Debug.Log("game over, level 1");
+                Screen.showCursor = true;
+                this.pauseTimer();
+                Time.timeScale = 0;
+                nameInputCanvas.SetActive(true);
+               // SaveHighScore(name, this.Score,secondsCounter);
             }
             else if (getCurrentLevel() == 2)
             {
-                string name = "hphphp";
-                SaveHighScore(name, this.Score + scoreFromLevel1, timeUsedInLevel1 + secondsCounter);
+                Debug.Log("game over, level 2");
+                Screen.showCursor = true;
+                this.pauseTimer();
+                Time.timeScale = 0;
+                nameInputCanvas.SetActive(true);
             }
-            timer.Stop();
-            gameOver.SetActive(true);
-            Time.timeScale = .25f;
-            Invoke("Reset", resetDelay);
-            this.BricksHitInARow = 0;
-            this.Score = 0;
         }
 
     }
@@ -189,6 +195,7 @@ public class GM : MonoBehaviour
         this.timerStarted = false;
         Time.timeScale = 1f;
         Application.LoadLevel(Application.loadedLevel);
+        this.Score = 0;
         ScoreText.text = "Score: 0";
     }
 
@@ -374,11 +381,29 @@ public class GM : MonoBehaviour
         {
             // Show error message
         }
-    }
+    }   
 
-    public void getNameInput()
+    public void getNameEnteredAndSaveHighScore(string name)
     {
+        nameInputCanvas.SetActive(false);
 
+        switch(getCurrentLevel())
+        {
+            case 1: 
+                SaveHighScore(name, this.Score + scoreFromLevel1, timeUsedInLevel1 + secondsCounter);
+                break;
+            case 2: 
+                SaveHighScore(name, this.Score, secondsCounter);
+                break;
+            default: break;
+        }
+
+        timer.Stop();
+        gameOver.SetActive(true); //??
+        Time.timeScale = .25f;
+        Invoke("Reset", 0f);
+        this.BricksHitInARow = 0;
+        this.Score = 0;
     }
 
 }
