@@ -35,9 +35,14 @@ public class GM : MonoBehaviour
     public GameObject godlikeSound2;
     public GameObject backGroundMusicLev1;
     public GameObject backGroundMusicLev2;
+
+    public Canvas nameInputCanvas;
     int secondsCounter = 0;
     private static Timer timer;
     public bool timerStarted = false;
+
+    static public int scoreFromLevel1 = 0;
+    static public int timeUsedInLevel1 = 0;
     
     
     public GameObject bricksPrefab;
@@ -125,6 +130,17 @@ public class GM : MonoBehaviour
         {
             timer.Stop();
             youWon.SetActive(true);
+            Debug.Log("check game ova");
+            if(getCurrentLevel() == 1)
+            {
+                scoreFromLevel1 = this.Score;
+                timeUsedInLevel1 = secondsCounter;
+            }
+            else if(getCurrentLevel() == 2)
+            {
+                string name = "hphphp";
+                SaveHighScore(name, this.Score + scoreFromLevel1, timeUsedInLevel1 + secondsCounter);
+            }
             Time.timeScale = .25f;
             Invoke("loadNextLevel", 1f);
             this.BricksHitInARow = 0;
@@ -133,6 +149,15 @@ public class GM : MonoBehaviour
 
         if (lives < 1)
         {
+            if (getCurrentLevel() == 1)
+            {
+                SaveHighScore(name, this.Score,secondsCounter);
+            }
+            else if (getCurrentLevel() == 2)
+            {
+                string name = "hphphp";
+                SaveHighScore(name, this.Score + scoreFromLevel1, timeUsedInLevel1 + secondsCounter);
+            }
             timer.Stop();
             gameOver.SetActive(true);
             Time.timeScale = .25f;
@@ -298,9 +323,21 @@ public class GM : MonoBehaviour
         }
     }
 
+    public void loadNextLevel()
+    {
+            switch (getCurrentLevel())
+            {
+                case -2: Application.LoadLevel("Splash2"); break;
+                case -1: Application.LoadLevel("Menu2"); break;
+                case 0: Application.LoadLevel("Scene1"); break;
+                case 1: Application.LoadLevel("Scene2"); break;
+                case 2: Application.LoadLevel("Menu2"); break;
+            }
+    }
+
     public void loadNextLevel(bool loadMenu = false)
     {
-        if(loadMenu)
+        if (loadMenu)
             Application.LoadLevel("Menu2");
         else
         {
@@ -315,7 +352,7 @@ public class GM : MonoBehaviour
         }
     }
 
-    private void SaveHighScore(string name)
+    private void SaveHighScore(string name, int points, int time)
     {
         try
         {
@@ -329,7 +366,7 @@ public class GM : MonoBehaviour
                 }
             }
 
-            PlayerPrefs.SetString(key, "Name : " + name + " - " + this.Score + "points (" + this.secondsCounter + "seconds)");
+            PlayerPrefs.SetString(key, "Name : " + name + " - " + points + " points (" + time + "seconds)");
         }
         catch(Exception)
         {
@@ -337,32 +374,9 @@ public class GM : MonoBehaviour
         }
     }
 
-    private String LoadHighScores()
+    public void getNameInput()
     {
-        try
-        {
-            String highscore = String.Empty;
-            string key = "0";
-            int x = 0;
-            while (PlayerPrefs.HasKey(key))
-            {
-                highscore += PlayerPrefs.GetString(key);
-                highscore += System.Environment.NewLine;
 
-                x++;
-                key = x + String.Empty;
-            }
-
-            if(!String.IsNullOrEmpty(highscore))
-                return highscore;
-        }
-        catch (Exception)
-        {
-            return "Couldnt load highscores";
-            // Show error message
-        }
-
-        return "No highscores available. Doh!";
-       
     }
+
 }
