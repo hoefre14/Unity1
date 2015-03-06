@@ -107,10 +107,12 @@ public class GM : MonoBehaviour
 
     public void pauseTimer()
     {
+        Screen.showCursor = true;
         timer.Stop();
     }
 
     public void resumeTimer(){
+        Screen.showCursor = false;
         timer.Start();
     }
 

@@ -87,7 +87,7 @@ MonoBehaviour:
   soundLevel2: {fileID: 0}
   sound2Level2: {fileID: 0}
   sound3Level3: {fileID: 0}
-  particles: {fileID: 103190, guid: 617903758eaea854aa7c9b53730380da, type: 2}
+  particles: {fileID: 153134, guid: a0323f15972d9824c9b980a0d643dbd5, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
