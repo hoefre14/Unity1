@@ -1887,7 +1887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 3
   resetDelay: 1
-  paddle: {fileID: 157760, guid: 114000819f733724ea3612e69e84e38f, type: 2}
+  paddle: {fileID: 149528, guid: 3a3ff4bc25a709742a5036c23be9c6bb, type: 2}
   livesText: {fileID: 1523614323}
   ScoreText: {fileID: 1086391560}
   timeText: {fileID: 1492424088}
