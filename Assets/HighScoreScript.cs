@@ -51,7 +51,8 @@ public class HighScoreScript : MonoBehaviour {
             int placement = 1;
             foreach(var s in scores)
             {
-                highscore += placement + " - " + s.text;
+                if(placement <= 25) //tar bare med de 25 beste
+                     highscore += placement + " - " + s.text;
                 placement++;
             }
 
