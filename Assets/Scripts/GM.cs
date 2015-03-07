@@ -108,7 +108,14 @@ public class GM : MonoBehaviour
     public void pauseTimer()
     {
         Screen.showCursor = true;
-        timer.Stop();
+        try
+        {
+            timer.Stop();
+        }
+        catch(Exception)
+        {
+
+        }
     }
 
     public void resumeTimer(){
@@ -155,6 +162,7 @@ public class GM : MonoBehaviour
 
         if (lives < 1)
         {
+            gameOver.SetActive(true);
             if (getCurrentLevel() == 1)
             {
                 Debug.Log("game over, level 1");
@@ -399,7 +407,6 @@ public class GM : MonoBehaviour
         }
 
         timer.Stop();
-        gameOver.SetActive(true); //??
         Time.timeScale = .25f;
         Invoke("Reset", 0f);
         this.BricksHitInARow = 0;

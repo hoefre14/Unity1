@@ -1832,7 +1832,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 30, y: 0}
+  m_AnchoredPosition: {x: 30, y: -80}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1214170331
@@ -1847,7 +1847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: .39199999}
+  m_Color: {r: 0, g: 0, b: 0, a: .784313738}
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -2375,7 +2375,7 @@ MonoBehaviour:
   godlikeSound2: {fileID: 103190, guid: 552cda08f6a19754bbd2788742891744, type: 2}
   backGroundMusicLev1: {fileID: 135296, guid: dddeb5e181fdb15418882fb10ea9261a, type: 2}
   backGroundMusicLev2: {fileID: 135296, guid: ced423c20b7a50e4089a4daacb5987da, type: 2}
-  nameInputCanvas: {fileID: 0}
+  nameInputCanvas: {fileID: 1153334829}
   timerStarted: 0
   bricksPrefab: {fileID: 174878, guid: 23b5321a8ed2f6242aa85d105a1c5c06, type: 2}
 --- !u!4 &1636631140
