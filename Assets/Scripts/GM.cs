@@ -143,7 +143,7 @@ public class GM : MonoBehaviour
             if(getCurrentLevel() == 1)
             {
                 scoreFromLevel1 = this.Score;
-                timeUsedInLevel1 = secondsCounter;
+                timeUsedInLevel1 = this.secondsCounter;
 
                 Time.timeScale = .25f;
                 Invoke("loadNextLevel", 1f);
@@ -397,11 +397,11 @@ public class GM : MonoBehaviour
 
         switch(getCurrentLevel())
         {
-            case 1: 
-                SaveHighScore(name, this.Score + scoreFromLevel1, timeUsedInLevel1 + secondsCounter);
-                break;
-            case 2: 
+            case 1:
                 SaveHighScore(name, this.Score, secondsCounter);
+                break;
+            case 2:
+                SaveHighScore(name, this.Score + scoreFromLevel1, timeUsedInLevel1 + secondsCounter);
                 Application.LoadLevel("Highscores");
                 Debug.Log("mainmenuaccessed");
                 break;
