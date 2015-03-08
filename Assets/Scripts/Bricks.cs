@@ -34,7 +34,7 @@ public class Bricks : MonoBehaviour {
                 {
                     case 1: GameObject.Instantiate(sound); break;
                     case 2: GameObject.Instantiate(sound2); break;
-                    case 3: GameObject.Instantiate(sound); break;
+                    case 3: GameObject.Instantiate(sound3); break;
                     default: GameObject.Instantiate(sound); break;
                 }
                 break;
