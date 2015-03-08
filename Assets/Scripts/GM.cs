@@ -159,7 +159,7 @@ public class GM : MonoBehaviour
             }
         }
 
-        if (lives < 1)
+        else if (lives < 1)
         {
             gameOver.SetActive(true);
             if (getCurrentLevel() == 1)
