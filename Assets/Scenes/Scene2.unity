@@ -1288,7 +1288,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: .963235319, g: .198313177, b: .198313177, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 75683e9d874215f4bac82d9d15c51abd, type: 3}
     m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 1
@@ -1337,7 +1337,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: .970588207, g: .0570934191, b: .151592553, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 75683e9d874215f4bac82d9d15c51abd, type: 3}
     m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 1
@@ -1678,8 +1678,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: .469831318, g: .626469135, b: .808823526, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_Font: {fileID: 12800000, guid: 75683e9d874215f4bac82d9d15c51abd, type: 3}
+    m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 10
@@ -2124,8 +2124,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: .523602545, g: .808823526, b: .469831318, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_Font: {fileID: 12800000, guid: 75683e9d874215f4bac82d9d15c51abd, type: 3}
+    m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 10
@@ -2310,8 +2310,8 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: .742647052, g: .371323526, b: .371323526, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_Font: {fileID: 12800000, guid: 75683e9d874215f4bac82d9d15c51abd, type: 3}
+    m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 10
@@ -2377,7 +2377,7 @@ MonoBehaviour:
   backGroundMusicLev2: {fileID: 135296, guid: ced423c20b7a50e4089a4daacb5987da, type: 2}
   nameInputCanvas: {fileID: 1153334829}
   timerStarted: 0
-  bricksPrefab: {fileID: 174878, guid: 23b5321a8ed2f6242aa85d105a1c5c06, type: 2}
+  bricksPrefab: {fileID: 174878, guid: f7a1b245a6afa924b918db698a30a6d9, type: 2}
 --- !u!4 &1636631140
 Transform:
   m_ObjectHideFlags: 0
