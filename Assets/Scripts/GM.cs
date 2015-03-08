@@ -382,8 +382,11 @@ public class GM : MonoBehaviour
                     break;
                 }
             }
+            string timeString = "";
+            TimeSpan ts = TimeSpan.FromSeconds(time);
+            timeString = (ts.Minutes == 0 ? ts.Seconds + " seconds" : ts.Minutes + " minutes, " + ts.Seconds + " seconds");
 
-            PlayerPrefs.SetString(key, name + " - " + points + " points (" + time + " seconds)");
+            PlayerPrefs.SetString(key, name + " - " + points + " points (" + timeString + ")");
         }
         catch(Exception)
         {
@@ -399,20 +402,21 @@ public class GM : MonoBehaviour
         {
             case 1:
                 SaveHighScore(name, this.Score, secondsCounter);
+                        timer.Stop();
+                        Time.timeScale = .25f;
+                        Invoke("Reset", 0f);
+                        this.BricksHitInARow = 0;
+                        this.Score = 0;
                 break;
             case 2:
                 SaveHighScore(name, this.Score + scoreFromLevel1, timeUsedInLevel1 + secondsCounter);
+                this.BricksHitInARow = 0;
+                this.Score = 0;
                 Application.LoadLevel("Highscores");
                 Debug.Log("mainmenuaccessed");
                 break;
             default: break;
         }
-
-        timer.Stop();
-        Time.timeScale = .25f;
-        Invoke("Reset", 0f);
-        this.BricksHitInARow = 0;
-        this.Score = 0;
     }
 
 }

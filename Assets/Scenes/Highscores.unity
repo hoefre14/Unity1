@@ -265,6 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1419084381}
+  backGroundMusic: {fileID: 135296, guid: 8c5c60803501b514e9032d59d8668bf8, type: 2}
 --- !u!1 &442353058
 GameObject:
   m_ObjectHideFlags: 0
