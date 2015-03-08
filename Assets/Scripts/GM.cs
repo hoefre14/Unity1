@@ -374,7 +374,7 @@ public class GM : MonoBehaviour
         try
         {
             string key = String.Empty;
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 2000; i++)
             {
                 if (!PlayerPrefs.HasKey(i + String.Empty))
                 {

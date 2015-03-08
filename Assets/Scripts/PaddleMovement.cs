@@ -33,11 +33,10 @@ public class PaddleMovement : MonoBehaviour {
 
         Rigidbody rigid = col.rigidbody;
         float xDistance = rigid.position.x - transform.position.x;
-        /*
-        if(hits < 4)
-        {
-            force = 1f;
-        }*/
+
+       // Debug.Log("collision paddle");
+        Debug.Log("hits: " + hits);
+
         if (hits == 4)
         {
             force = 1.2f;
