@@ -39,15 +39,15 @@ public class Menu : MonoBehaviour
         Debug.Log("Game is exiting");
     }
     
-    public void MuteGame(){
+    public void MuteGame(int index){
 
-        if (muteToggle == true)
-        {
-            AudioListener.volume = 0;
-        }
-        else if (muteToggle == false)
+        if (index == 1)
         {
             AudioListener.volume = 1;
+        }
+        if (index == 2)
+        {
+            AudioListener.volume = 0;
         }
    
     }
