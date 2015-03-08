@@ -57,11 +57,11 @@ public class PaddleMovement : MonoBehaviour {
         }
         else if(hits == 4)
         {
-            force = 1.1f;
+            force = 1.08f;
         }
         else if(hits == 12) 
         {
-            force = 1.2f;
+            force = 1.15f;
         }
 
         Rigidbody rigid = col.rigidbody;
