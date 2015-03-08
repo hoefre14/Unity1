@@ -20,7 +20,6 @@ public class nameInputButtonScript : MonoBehaviour {
         if(!string.IsNullOrEmpty(nameInput.text))
         {
             GM.instance.getNameEnteredAndSaveHighScore(nameInput.text);
-            Application.LoadLevel("Highscores");
         }
     }
 }

@@ -8,8 +8,10 @@ using System.Collections.Generic;
 public class HighScoreScript : MonoBehaviour {
 
     public Text scoreText;
+    public GameObject backGroundMusic;
 	// Use this for initialization
 	void Start () {
+        Instantiate(backGroundMusic);
         string scores = LoadHighScores();
         scoreText.text = scores;
 	}

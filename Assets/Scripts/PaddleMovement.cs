@@ -50,19 +50,23 @@ public class PaddleMovement : MonoBehaviour {
         Vector2 direction = delta.normalized;
         col.collider.rigidbody.velocity = direction * 500f;
         */
-        float force = 350;
+        float force = 1f;
         if(hits < 4)
         {
-            force = 350;
+            force = 1f;
         }
-        else if(hits >= 4 && hits <= 11)
+        else if(hits == 4)
         {
-            force = 400;
+            force = 1.1f;
         }
-        else if(hits >= 12) 
+        else if(hits == 12) 
         {
-            force = 450;
+            force = 1.2f;
         }
+
+        Rigidbody rigid = col.rigidbody;
+        float xDistance = rigid.position.x - transform.position.x;
+        rigid.velocity = new Vector3(rigid.velocity.x + xDistance / 2, rigid.velocity.y, rigid.velocity.z) * force;
         
         /*
         foreach (ContactPoint contact in col.contacts)
@@ -70,9 +74,10 @@ public class PaddleMovement : MonoBehaviour {
             if (contact.thisCollider == collider)
             {
                 float z = contact.point.x - transform.position.x;
-                contact.otherCollider.rigidbody.velocity = new Vector3(z * 500f, z * 500f, 0);
+                contact.otherCollider.rigidbody.velocity = new Vector3(z * 20f, z * 20f, 0);
             }
-        }*/
+        }
+         * */
     }
     /*
 
