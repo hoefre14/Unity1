@@ -2424,7 +2424,7 @@ MonoBehaviour:
   backGroundMusicLev2: {fileID: 135296, guid: ced423c20b7a50e4089a4daacb5987da, type: 2}
   nameInputCanvas: {fileID: 1605137490}
   timerStarted: 0
-  bricksPrefab: {fileID: 174878, guid: 23b5321a8ed2f6242aa85d105a1c5c06, type: 2}
+  bricksPrefab: {fileID: 175572, guid: 23b5321a8ed2f6242aa85d105a1c5c06, type: 2}
 --- !u!4 &1636631140
 Transform:
   m_ObjectHideFlags: 0

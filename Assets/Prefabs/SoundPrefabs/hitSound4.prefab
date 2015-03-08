@@ -11,7 +11,7 @@ GameObject:
   - 82: {fileID: 8203190}
   - 114: {fileID: 11403190}
   m_Layer: 0
-  m_Name: hitSound1
+  m_Name: hitSound4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +37,7 @@ AudioSource:
   m_GameObject: {fileID: 103190}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: edaceef8056d14ff3a74c7b1091b3ef7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 849b2dd0eaa7e484ba73710f10346590, type: 3}
   m_PlayOnAwake: 1
   m_Volume: .800000012
   m_Pitch: 1
