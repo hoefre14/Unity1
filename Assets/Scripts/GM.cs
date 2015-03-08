@@ -402,6 +402,8 @@ public class GM : MonoBehaviour
                 break;
             case 2: 
                 SaveHighScore(name, this.Score, secondsCounter);
+                Application.LoadLevel("Highscores");
+                Debug.Log("mainmenuaccessed");
                 break;
             default: break;
         }
