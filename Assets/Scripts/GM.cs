@@ -383,7 +383,7 @@ public class GM : MonoBehaviour
                 }
             }
 
-            PlayerPrefs.SetString(key, name + " - " + points + " points (" + time + "seconds)");
+            PlayerPrefs.SetString(key, name + " - " + points + " points (" + time + " seconds)");
         }
         catch(Exception)
         {
