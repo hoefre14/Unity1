@@ -6,6 +6,7 @@ public class SplashScript : MonoBehaviour {
 
 
     IEnumerator Start () {
+        Time.timeScale = 1;
         yield return new WaitForSeconds(delayTime);
         
         Application.LoadLevel ("Splash2");

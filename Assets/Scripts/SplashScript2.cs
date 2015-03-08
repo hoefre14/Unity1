@@ -6,6 +6,7 @@ public class SplashScript2 : MonoBehaviour {
 
 
     IEnumerator Start () {
+        Time.timeScale = 1;
         yield return new WaitForSeconds(delayTime);
         
         Application.LoadLevel ("Menu2");
