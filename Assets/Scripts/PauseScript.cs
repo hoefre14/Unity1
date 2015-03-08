@@ -47,7 +47,6 @@ public class PauseScript : MonoBehaviour {
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Game is exiting");
     }
 
 }

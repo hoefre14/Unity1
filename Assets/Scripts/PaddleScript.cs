@@ -11,7 +11,6 @@ public class PaddleScript : MonoBehaviour {
     public GameObject Ball;
     public GameObject attachedBall = null;
     public Rigidbody BallRigidbody;
-    public float ballspeed = 4250;
     public AudioClip paddlesound;
 
 	// Use this for initialization

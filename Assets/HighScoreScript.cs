@@ -25,12 +25,6 @@ public class HighScoreScript : MonoBehaviour {
     {
         try
         {
-            /*
-            for(int i = 0; i < 10; i++)
-            {
-                PlayerPrefs.SetString(i + "", "Name : " + " random navn " + " - " + i*3 + " points (" + i*10 + "seconds)");
-            }*/
-
             List<HighScore> scores = new List<HighScore>();
 
             string highscore = String.Empty;
@@ -64,10 +58,10 @@ public class HighScoreScript : MonoBehaviour {
         }
         catch (Exception)
         {
-            return "Couldnt load highscores";
+            return "Couldnt load highscores. Doh!";
         }
 
-        return "No highscores available. Doh!";
+        return "No highscores stored yet. Start playing!";
     }
 
     private class HighScore

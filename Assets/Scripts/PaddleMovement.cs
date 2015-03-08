@@ -28,14 +28,10 @@ public class PaddleMovement : MonoBehaviour {
         }
         this.brickCheck = GM.instance.Bricks;
         GM.instance.BricksHitInARow = 0;
-        GM.instance.PaddleHitCount++;
-        int hits = GM.instance.PaddleHitCount;
+        int hits = ++GM.instance.PaddleHitCount;
 
         Rigidbody rigid = col.rigidbody;
         float xDistance = rigid.position.x - transform.position.x;
-
-       // Debug.Log("collision paddle");
-        Debug.Log("hits: " + hits);
 
         if (hits == 4)
         {

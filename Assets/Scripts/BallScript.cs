@@ -40,9 +40,6 @@ public class BallScript : MonoBehaviour {
     private Rigidbody rb;
     private bool ballInPlay;
     Vector3 oldVel;
-    public float maxVelocity = 600f;
-    public float minVelocity = 10f;
-
 
 	// Use this for initialization
     void Awake()
@@ -69,31 +66,12 @@ public class BallScript : MonoBehaviour {
             rb.isKinematic = false;
             rb.AddForce(new Vector3(40f, ballInitialVelocity, 0));
         }
-
-        /*
-        float totalVelocity = Vector3.Magnitude(rigidbody.velocity);
-        if (totalVelocity > maxVelocity)
-        {
-            float tooHard = totalVelocity / maxVelocity;
-            rigidbody.velocity /= tooHard;
-        }
-        else if (totalVelocity < minVelocity)
-        {
-            float tooSlowRate = totalVelocity / minVelocity;
-            rigidbody.velocity /= tooSlowRate;
-        }*/
     }
 
     void OnCollisionEnter(Collision c)
     {
         ContactPoint cp = c.contacts[0];
-        // calculate with addition of normal vector
-         rb.velocity = oldVel + cp.normal*2.0f*oldVel.magnitude;
-
-        // calculate with Vector3.Reflect
+        rb.velocity = oldVel + cp.normal*2.0f*oldVel.magnitude;
         rb.velocity = Vector3.Reflect(oldVel, cp.normal);
-
-        // bumper effect to speed up ball
-        //rb.velocity += cp.normal * 0.5f;
     }
 }

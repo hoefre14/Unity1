@@ -165,16 +165,13 @@ public class GM : MonoBehaviour
             gameOver.SetActive(true);
             if (getCurrentLevel() == 1)
             {
-                Debug.Log("game over, level 1");
                 Screen.showCursor = true;
                 this.pauseTimer();
                 Time.timeScale = 0;
                 nameInputCanvas.SetActive(true);
-               // SaveHighScore(name, this.Score,secondsCounter);
             }
             else if (getCurrentLevel() == 2)
             {
-                Debug.Log("game over, level 2");
                 Screen.showCursor = true;
                 this.pauseTimer();
                 Time.timeScale = 0;
@@ -190,12 +187,6 @@ public class GM : MonoBehaviour
         string seconds;
         seconds = ts.Seconds < 10 ? "0" + ts.Seconds : ts.Seconds.ToString();
         timeText.text = "Time: " + (ts.Minutes == 0 ? seconds : ts.Minutes + ":" + seconds);
-    }
-
-    void OnApplicationQuit()
-    {
-        //timer.Stop();
-        //timer = null;
     }
 
     void Reset()
@@ -214,9 +205,6 @@ public class GM : MonoBehaviour
 
     public void LoseLife()
     {
-       // backGroundMusicLev1.GetComponent<AudioSource>().volume = 0.1f;
-        // backGroundMusicLev1.audio.volume = 0.1f;
-        //Invoke("setMaxVolumeForBackGroundMusic", 3);
         this.paddleHitCountWithBricksDestroyedInBetween = 0;
         this.BricksHitInARow = 0;
         resetHitCount();
@@ -234,7 +222,6 @@ public class GM : MonoBehaviour
 
     private void setMaxVolumeForBackGroundMusic()
     {
-        Debug.Log("setmaxvolum called");
         backGroundMusicLev1.GetComponent<AudioSource>().volume = 1f;
     }
 
@@ -270,7 +257,6 @@ public class GM : MonoBehaviour
             scoreToBeAdded = (this.PaddleHitCountWithBricksDestroyedInBetween * 4) + scoreToBeAdded;
         }
 
-        //int x = ((500 - Mathf.Clamp(secondsCounter, 0, 499)) * 2 / 10) + 1;
         this.Score += scoreToBeAdded;
     }
 
@@ -413,7 +399,6 @@ public class GM : MonoBehaviour
                 this.BricksHitInARow = 0;
                 this.Score = 0;
                 Application.LoadLevel("Highscores");
-                Debug.Log("mainmenuaccessed");
                 break;
             default: break;
         }
