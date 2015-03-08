@@ -70,9 +70,10 @@ public class PaddleMovement : MonoBehaviour {
             if (contact.thisCollider == collider)
             {
                 float z = contact.point.x - transform.position.x;
-                contact.otherCollider.rigidbody.velocity = new Vector3(z * 500f, z * 500f, 0);
+                contact.otherCollider.rigidbody.velocity = new Vector3(z * 20f, z * 20f, 0);
             }
-        }*/
+        }
+         * */
     }
     /*
 
