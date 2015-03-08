@@ -40,6 +40,8 @@ public class BallScript : MonoBehaviour {
     private Rigidbody rb;
     private bool ballInPlay;
     Vector3 oldVel;
+    public float maxVelocity = 600f;
+    public float minVelocity = 10f;
 
 
 	// Use this for initialization
@@ -67,6 +69,19 @@ public class BallScript : MonoBehaviour {
             rb.isKinematic = false;
             rb.AddForce(new Vector3(40f, ballInitialVelocity, 0));
         }
+
+        /*
+        float totalVelocity = Vector3.Magnitude(rigidbody.velocity);
+        if (totalVelocity > maxVelocity)
+        {
+            float tooHard = totalVelocity / maxVelocity;
+            rigidbody.velocity /= tooHard;
+        }
+        else if (totalVelocity < minVelocity)
+        {
+            float tooSlowRate = totalVelocity / minVelocity;
+            rigidbody.velocity /= tooSlowRate;
+        }*/
     }
 
     void OnCollisionEnter(Collision c)
