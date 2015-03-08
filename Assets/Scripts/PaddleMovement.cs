@@ -46,22 +46,16 @@ public class PaddleMovement : MonoBehaviour {
         }
         else if(hits == 12) 
         {
-            force = 1.4f;
+            force = 1.3f;
             rigid.velocity = new Vector3(rigid.velocity.x + xDistance / 2, rigid.velocity.y, rigid.velocity.z) * force;
         }
         else
         {
-            force = 1f;
             rigid.velocity = new Vector3(rigid.velocity.x + xDistance / 2, rigid.velocity.y, rigid.velocity.z);
         }
 
         Debug.Log("force: " + force);
         
-    }
-
-    private void giveNewVelocity(float x, float y, float z)
-    {
-
     }
 
 }
